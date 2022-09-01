@@ -35,23 +35,25 @@ async function crear_pregunta(pregunta, respuesta_1, respuesta_2, respuesta_3, r
 
 const cargarPreguntas = async()=>{
     const client= await pool.connect()
-    const respuesta=await client.query({
-        text:`select id,pregunta from preguntas order by random() limit 3;`
+    const preguntas=await client.query({
+        text:`select * from preguntas order by random() limit 3;`
+        // rowMode: 'array' 
     })
-   console.log(respuesta.rows)
+  
     client.release()
-    return respuesta.rows
+    return preguntas.rows
 }
 const cargarRespuestas = async(id)=>{
     const client= await pool.connect()
     const respuesta=await client.query({
         text:`select respuesta_correcta,respuesta_1,respuesta_2,respuesta_3,respuesta_4 
         from preguntas where id =$1;`,
-        values:[id]
+        values:[id],
+        rowMode: 'array' 
     })
    //console.log(respuesta.rows)
     client.release()
-    return respuesta.rows
+    return respuesta.rows[0]
 }
 
 

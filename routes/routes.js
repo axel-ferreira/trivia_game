@@ -29,17 +29,39 @@ router.post('/new_question',async(req,res)=>{
   console.log()
   res.redirect(('/'))
 })
-
+// async function respuestadesordenadas(id){
+//   let respuestas= await cargarRespuestas(id)
+//   let largo = respuestas.length
+//   let posicion = Math.floor(Math.random()*respuestas.length)
+//   console.log(respuestas,largo,posicion);
+// }
+// respuestadesordenadas(2)
 router.get('/lets_play', protected_route, async (req, res) => {
   let preguntas=await cargarPreguntas()
-  
-  let respuestas = preguntas.map(async prg =>{
-    const id= prg.id
-    let res = await cargarRespuestas(id)
-    console.log('1',prg)
-    return prg;
-  })
-  console.log('2',respuestas)
+  preguntas[0].respuestas = [
+    {
+      value: 'correcta',
+      text: preguntas[0].respuesta_correcta
+    },
+    {
+      value: 'incorrecta',
+      text: preguntas[0].respuesta_1
+    },
+    {
+      value: 'incorrecta',
+      text: preguntas[0].respuesta_2
+    },
+    {
+      value: 'incorrecta',
+      text: preguntas[0].respuesta_3
+    },
+    {
+      value: 'correcta',
+      text: preguntas[0].respuesta__4
+    },
+  ]
+  preguntas[0].respuestas = preguntas[0].respuestas.sort( (elem1, elem2) => Math.random() - 0.5)
+  console.log(preguntas[0].respuestas);
   res.render('lets_play.html',{preguntas})
 })
 
