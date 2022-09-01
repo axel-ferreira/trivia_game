@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import navbar %}
+
+{% block main %}
+  {{ navbar('/', user) }}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-6 offset-3 bg-primary">
+        <div class="text-center">
+          <a class="btn mt-5" href="/lets_play">Play</a>
+        </div>
+        <p class="text-center mt-3">click en el boton para jugar</p>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-10 offset-1 bg-danger">
+        <div class="mx-auto">
+          <label class="" for="buscar">Buscar:</label>
+          <input class="" type="text" id="buscar">
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-10 offset-1 bg-danger">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">nombre</th>
+              <th scope="col">puntaje</th>
+              <th scope="col">porcentaje</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

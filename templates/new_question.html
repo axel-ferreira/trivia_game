@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import navbar %}
+
+{% block main %}
+  {{ navbar('/dos', user) }}
+  <div class="container">
+    <div class="row">
+      <div class="col-10 offset-1">
+        <h1 class="text-center">Nueva Pregunta</h1>
+        <form method="post" action="/new_question">
+          <div class="mb-3">
+            <label for="" class="form-label">Pregunta:</label>
+            <!-- <input type="text-area" class="form-control" id="" aria-describedby="emailHelp"> -->
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="pregunta"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Respuesta correcta:</label>
+            <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="respuesta_1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Pregunta incorrecta 1:</label>
+            <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="respuesta_2">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Pregunta incorrecta 2:</label>
+            <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="respuesta_3">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Pregunta incorrecta 3:</label>
+            <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="respuesta_4">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Pregunta incorrecta 4:</label>
+            <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="respuesta_5">
+          </div>
+          <a class="btn btn-primary" href="/index.html">Cancel</a>
+          <button type="submit" class="btn btn-primary">Agregar pregunta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

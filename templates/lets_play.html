@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import navbar %}
+
+{% block main %}
+  {{ navbar('/tres', user) }}
+  <!-- <h2 class="text-center">Página TRES. {{user.email}}</h2> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-10 offset-1 bg-danger">
+        <p>Hola {{user.name}}!</p>
+        <p>Elige una respuesta por cada pregunta y envia el test una vez respondido. <br> Buena suerte!</p>
+      </div>
+    </div>
+    <div class="row border-dark">
+      {% for pregunta in preguntas %}
+      <div class="col-10 offset-1">
+        <p>¿{{pregunta.pregunta}}</p>
+        <div>
+          <input name="pregunta1"type="radio" value="correcta">
+          <label >{{pregunta.respuesta_correcta}}</label>
+        </div>
+        <div>
+          <input name="pregunta1"type="radio" value="incorrecta">
+          <label >{{pregunta.respuesta_1}}</label>
+        </div>
+        <div>
+          <input name="pregunta1"type="radio" value="incorrecta">
+          <label >{{pregunta.respuesta_2}}</label>
+        </div>
+        <div>
+          <input name="pregunta1"type="radio" value="incorrecta">
+          <label >{{pregunta.respuesta_3}}</label>
+        </div>
+        
+        <div>
+          <input name="pregunta1"type="radio" value="incorrecta">
+          <label >{{pregunta.respuesta_4}}</label>
+        </div>
+
+        <!--   
+          <label >Julio Cesar</label>
+          <input name="pregunta1"type="radio" value="correcta">
+          
+          <label >Cayo Cesar Germanio (Calígula)</label>
+          <input name="pregunta1"type="radio" value="incorrecta"> -->
+        </div>
+        {%endfor%}
+    </div>
+  </div>
+{% endblock %}
