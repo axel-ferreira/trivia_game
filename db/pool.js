@@ -4,8 +4,8 @@ const secrets = require('../secrets')
 const config = {
   user: secrets.db_user,
   host: 'localhost',
-  database: 'trivia',
-  password: '9149',
+  database: secrets.db_name,
+  password: secrets.db_pass,
   min: 3,
   max: 6,
   idleTimeoutMillis: 3000,

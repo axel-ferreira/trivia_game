@@ -1,4 +1,23 @@
 {
+  "name": "trivias_examen",
+  "version": "1.0.0",
+  "description": "1. Clonar el proyecto\r    `git clone REPO_STARTERKIT`",
+  "main": "secrets.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axel-ferreira/trivia_game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axel-ferreira/trivia_game/issues"
+  },
+  "homepage": "https://github.com/axel-ferreira/trivia_game#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bootstrap": "^5.2.0",
@@ -7,18 +26,8 @@
     "connect-pg-simple": "^7.0.0",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
-    "nodemon": "^2.0.19",
+    "moment": "^2.29.4",
     "nunjucks": "^3.2.3",
     "pg": "^8.8.0"
-  },
-  "scripts": {
-    "start": "nodemon server.js"
-  },
-  "name": "juego-de-trivia--axel-ferreira",
-  "description": "proyecto juego de trivias",
-  "version": "1.0.0",
-  "main": "secrets.js",
-  "keywords": [],
-  "author": "Axel Ferreira",
-  "license": "ISC"
+  }
 }
